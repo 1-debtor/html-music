@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music Player</title>
+<link rel="stylesheet" href="styles/main.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-roboto">
+  <!-- New colorful, centered heading added here -->
+  <div class="page-title">Welcome to My Music Player(点击歌名播放)</div>
+  
+  <!-- Player Controls -->
+  <div class="p-4 bg-black">
+    <div class="flex items-center justify-center space-x-4">
+      <button id="playPauseBtn">
+        <!-- Play/Pause Button -->
+      </button>
+      <button id="loopBtn">
+        🔁
+        <!-- Loop Button -->
+      </button>
+      <span id="loopStatus" class="loop-status hidden">Loop Off</span>
+      <input type="range" id="volumeControl" min="0" max="100" value="100" class="volume-slider">
+      <input type="range" id="progressBar" min="0" value="0" class="progress-bar">
+      <span id="progressTime" class="text-sm">0:00</span>
+    </div>
+  </div>
+
+  <div class="min-h-screen flex flex-col">
+    <div class="flex flex-1">
+      <div class="p-4 overflow-auto bg-black" style="width: 15%;">
+        <ul id="songList" class="space-y-2">
+          <!-- Songs will be populated by JavaScript -->
+        </ul>
+      </div>
+      <div class="w-full p-4 overflow-auto">
+        <div id="lyrics" class="text-center text-gray-400 space-y-4">
+          <!-- Lyrics will be shown here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer bg-black text-center p-4">
+    <p>Created by DEBTOR | <a href="https://ccww.me" target="_blank"> Blog </a></p>
+  </div>
+<audio id="audioPlayer" controls style="display:none;"></audio>
+<script src="scripts/main.js"></script>
+</body>
+</html>

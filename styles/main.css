@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --highlight-color: #e14c82;
+  --normal-color: #2feb52;
+  --bg-color: #1a1a1a;
+  --control-bg-color: #333;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.volume-slider, .progress-bar {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 10%;
+  height: 20px;
+  border-radius: 5px;
+  background: #a4e8d0;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity .2s;
+}
+
+.volume-slider::-webkit-slider-thumb, .progress-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--highlight-color);
+  cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb, .progress-bar::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--highlight-color);
+  cursor: pointer;
+}
+
+#songList li:hover, #songList li.active {
+  background-color: var(--control-bg-color);
+  cursor: pointer;
+}
+
+#playPauseBtn, #loopBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#playPauseBtn img, #loopBtn img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
+
+.lyric-line {
+  font-size: 3rem;
+  color: #26f1c9;
+  transition: all 0.3s ease;
+}
+
+.highlight {
+  font-size: 8rem;
+  color: #db487e;
+}
+
+#songList li {
+  font-style: italic;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 30px;
+}
+
+/* 新增的循环按钮点击特效和提示文字样式 */
+.loop-status {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: var(--highlight-color); /* 使用变量中的颜色 */
+}
+
+.loop-active-effect {
+  animation: loopEffect 0.5s ease;
+}
+
+@keyframes loopEffect {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.page-title {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px; /* Adjust as needed */
+  background: -webkit-linear-gradient(to right, #ff7e5f, #feb47b); /* Chrome/Safari */
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Standard syntax */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ea7a7a; /* Fallback color: This will be visible in browsers that do not support gradient text */
+  font-weight: bold; /* Makes the text bold */
+  font-style: italic; /* Makes the text italic */
+}

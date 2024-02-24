@@ -1,0 +1,15 @@
+/my-music-player
+    /assets
+        /images
+            - play.png
+            - pause.png
+            - ...
+        /music
+            - song1.mp3
+            - song2.mp3
+            - ...
+    /scripts
+        - main.js
+    /styles
+        - main.css
+    - index.html
